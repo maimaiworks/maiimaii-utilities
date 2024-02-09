@@ -4,6 +4,8 @@
 import Foundation
 //import UIKit
 
-static func hoge() -> Int{
-	return 123
+struct MT {
+	static func hoge() -> Int{
+		return 123
+	}
 }

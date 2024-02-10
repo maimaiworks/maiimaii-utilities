@@ -4,7 +4,7 @@
 import Foundation
 //import UIKit
 
-struct MT {
+struct public MT {
 	public static func hoge() -> Int{
 		return 123
 	}

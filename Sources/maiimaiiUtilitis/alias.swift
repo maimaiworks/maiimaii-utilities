@@ -13,6 +13,6 @@ import Cocoa
 
 import maiimaiiUtilitis
 
-class alias: NSObject {
-	typealias x = maiimaiiUtilitis.MT
+public class alias: NSObject {
+	public typealias x = maiimaiiUtilitis.MT
 }

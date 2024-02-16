@@ -7,11 +7,9 @@
 
 #if !os(OSX)
 import UIKit
-#else
-import Cocoa
 #endif
 
-
+@available(iOS 2.0, *)
 class MTSystemInfo: NSObject {
 
 	/// アプリバージョン

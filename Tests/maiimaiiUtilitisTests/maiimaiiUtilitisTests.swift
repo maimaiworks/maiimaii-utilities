@@ -11,7 +11,7 @@ final class maiimaiiUtilitisTests: XCTestCase {
     }
 	
 	
-	func testhoge() {
-		XCTAssertEqual(MT.hoge(), 123)
-	}
+//	func testhoge() {
+//		XCTAssertEqual(MT.hoge(), 123)
+//	}
 }

@@ -5,7 +5,12 @@
 //  Created by Imai Hiroshi on 2/16/24.
 //
 
+#if !os(OSX)
 import UIKit
+#else
+import Cocoa
+#endif
+
 
 class MTSystemInfo: NSObject {
 

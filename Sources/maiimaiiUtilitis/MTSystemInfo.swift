@@ -8,6 +8,7 @@
 #if !os(OSX)
 import UIKit
 #endif
+import Foundation
 
 @available(iOS 2.0, *)
 class MTSystemInfo: NSObject {

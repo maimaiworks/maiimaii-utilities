@@ -1,6 +1,8 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+#if !os(OSX)
+
 import Foundation
 //import UIKit
 
@@ -30,3 +32,5 @@ public struct maiimaii {
 		}
 	}
 }
+
+#endif

@@ -7,7 +7,6 @@
 
 #if !os(OSX)
 import UIKit
-#endif
 import Foundation
 
 class MTSystemInfo: NSObject {
@@ -25,12 +24,10 @@ class MTSystemInfo: NSObject {
 	
 	/// OSバージョン
 	/// - Returns: OSバージョン:String
-	@available(iOS 2.0, *)
 	static func systemVersion() -> String {
 		return UIDevice.current.systemVersion
 	}
 	
-	@available(iOS 2.0, *)
 	struct Screen {
 		static let height = UIScreen.main.bounds.size.height
 		static let width = UIScreen.main.bounds.size.width
@@ -97,3 +94,4 @@ class MTSystemInfo: NSObject {
 	}
 
 }
+#endif

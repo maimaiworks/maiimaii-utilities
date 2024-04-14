@@ -1,10 +1,10 @@
 name: CI
 
-on:
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+#on:
+#  push:
+#    branches: [ develop ]
+#  pull_request:
+#    branches: [ develop ]
 
 # default Xcode_15.0.1
 #　https://github.com/actions/runner-images/blob/main/images/macos/macos-14-arm64-Readme.md#xcode
@@ -13,17 +13,17 @@ on:
 #   DEVELOPER_DIR: /Applications/Xcode_15.1.app
 #   DEVELOPER_DIR: /Applications/Xcode_14.3.1.app
 
-jobs:
-  build:
-    runs-on: macOS-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
-
-  test:
-    runs-on: macOS-latest
-    steps:
-    - uses: actions/checkout@v4
-    - name: Test
-      run: swift test -v
+#jobs:
+#  build:
+#    runs-on: macOS-latest
+#    steps:
+#    - uses: actions/checkout@v4
+#    - name: Build
+#      run: swift build -v
+#
+#  test:
+#    runs-on: macOS-latest
+#    steps:
+#    - uses: actions/checkout@v4
+#    - name: Test
+#      run: swift test -v

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTLoadingCircleView" customModule="maiimaiiUtilities">
+            <connections>
+                <outlet property="baseView" destination="omC-4O-yCY" id="qw1-2a-FNy"/>
+                <outlet property="circle" destination="ee9-3g-O2n" id="uUi-Du-fRE"/>
+                <outlet property="loadingView" destination="REc-cX-nby" id="EgN-S0-i5i"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="MTLoadingCircleView" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omC-4O-yCY">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="REc-cX-nby">
+                            <rect key="frame" x="157" y="398" width="100" height="100"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vti-kt-mrh">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciM-nt-PLE">
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="l09-hT-Swo">
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <vibrancyEffect>
+                                            <blurEffect style="light"/>
+                                        </vibrancyEffect>
+                                    </visualEffectView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_thin" translatesAutoresizingMaskIntoConstraints="NO" id="ee9-3g-O2n">
+                                        <rect key="frame" x="25" y="25" width="50" height="50"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="FrA-oc-T2w"/>
+                                            <constraint firstAttribute="height" constant="50" id="tDQ-0u-BSi"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ee9-3g-O2n" firstAttribute="centerX" secondItem="Vti-kt-mrh" secondAttribute="centerX" id="CEq-BC-U1f"/>
+                                    <constraint firstItem="ee9-3g-O2n" firstAttribute="centerY" secondItem="Vti-kt-mrh" secondAttribute="centerY" id="tBU-Ee-UIB"/>
+                                </constraints>
+                            </view>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="8wS-6U-NrE"/>
+                                <constraint firstAttribute="width" constant="100" id="maJ-1G-Mth"/>
+                            </constraints>
+                            <blurEffect style="extraLight"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="REc-cX-nby" firstAttribute="centerY" secondItem="omC-4O-yCY" secondAttribute="centerY" id="EiX-Uu-Mt0"/>
+                        <constraint firstItem="REc-cX-nby" firstAttribute="centerX" secondItem="omC-4O-yCY" secondAttribute="centerX" id="vSc-WM-NOj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="omC-4O-yCY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="K9j-Hh-44Q"/>
+                <constraint firstItem="omC-4O-yCY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xtf-Z5-it2"/>
+                <constraint firstAttribute="bottom" secondItem="omC-4O-yCY" secondAttribute="bottom" id="YE7-Za-rL5"/>
+                <constraint firstAttribute="trailing" secondItem="omC-4O-yCY" secondAttribute="trailing" id="vo5-dy-jBO"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="150.66964285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="circle_thin" width="60" height="60"/>
+    </resources>
+</document>

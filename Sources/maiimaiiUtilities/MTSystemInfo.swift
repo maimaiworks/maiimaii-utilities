@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class MTSystemInfo: NSObject {
+class MTInfo: NSObject {
 
 	/// アプリバージョン
 	/// - Returns: バージョン番号:String
@@ -27,71 +27,51 @@ class MTSystemInfo: NSObject {
 	static func systemVersion() -> String {
 		return UIDevice.current.systemVersion
 	}
+}
+
+open class MTSize: NSObject {
 	
-	struct Screen {
-		static let height = UIScreen.main.bounds.size.height
-		static let width = UIScreen.main.bounds.size.width
+	public struct Screen {
+		public static let height = UIScreen.main.bounds.size.height
+		public static let width = UIScreen.main.bounds.size.width
 	}
 
-	struct Safearea {
+	public struct Safearea {
 		// iOS11以降、ホームボタンタイプの端末の場合は0を返す
-		static let top = safeAreaTopFunc()
-		static let bottom = safeAreaBottomFunc()
-		static let left = safeAreaLeftFunc()
-		static let right = safeAreaRightFunc()
+		public static let top = safeAreaTopFunc()
+		public static let bottom = safeAreaBottomFunc()
+		public static let left = safeAreaLeftFunc()
+		public static let right = safeAreaRightFunc()
 	}
 
 	// iOS11以降、iPhone Xのsafe_area_top
 	static func safeAreaTopFunc() -> CGFloat {
 		var safeArea: CGFloat = 0
-		if #available(iOS 11.0, *) {
-			if #available(iOS 13.0, *) {
-				safeArea = UIApplication.shared.windows.filter { $0.isKeyWindow }[0].safeAreaInsets.top
-			} else {
-				safeArea = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0.0
-			}
-		}
+		safeArea = CGFloat(MTView.getWindow(level: 0)!.safeAreaInsets.top ?? 0.0)
 		return safeArea
 	}
 
 	// iOS11以降、iPhone Xのsafe_area_bottom
 	static func safeAreaBottomFunc() -> CGFloat {
 		var safeArea: CGFloat = 0
-		if #available(iOS 11.0, *) {
-			if #available(iOS 13.0, *) {
-				safeArea = UIApplication.shared.windows.filter { $0.isKeyWindow }[0].safeAreaInsets.bottom
-			} else {
-				safeArea = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0.0
-			}
-		}
+		safeArea = CGFloat(MTView.getWindow(level: 0)!.safeAreaInsets.bottom ?? 0.0)
 		return safeArea
 	}
 
 	// iOS11以降、iPhone Xのsafe_area_left
 	static func safeAreaLeftFunc() -> CGFloat {
 		var safeArea: CGFloat = 0
-		if #available(iOS 11.0, *) {
-			if #available(iOS 13.0, *) {
-				safeArea = UIApplication.shared.windows.filter { $0.isKeyWindow }[0].safeAreaInsets.left
-			} else {
-				safeArea = UIApplication.shared.keyWindow?.safeAreaInsets.left ?? 0.0
-			}
-		}
+		safeArea = CGFloat(MTView.getWindow(level: 0)!.safeAreaInsets.left ?? 0.0)
 		return safeArea
 	}
 
 	// iOS11以降、iPhone Xのsafe_area_right
 	static func safeAreaRightFunc() -> CGFloat {
 		var safeArea: CGFloat = 0
-		if #available(iOS 11.0, *) {
-			if #available(iOS 13.0, *) {
-				safeArea = UIApplication.shared.windows.filter { $0.isKeyWindow }[0].safeAreaInsets.right
-			} else {
-				safeArea = UIApplication.shared.keyWindow?.safeAreaInsets.right ?? 0.0
-			}
-		}
+		safeArea = CGFloat(MTView.getWindow(level: 0)!.safeAreaInsets.right ?? 0.0)
 		return safeArea
 	}
-
 }
+
+
 #endif

@@ -1,7 +1,7 @@
 import XCTest
-@testable import maiimaiiUtilitis
+@testable import maiimaiiUtilities
 
-final class maiimaiiUtilitisTests: XCTestCase {
+final class maiimaiiUtilitiesTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

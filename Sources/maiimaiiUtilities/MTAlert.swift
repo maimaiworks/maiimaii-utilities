@@ -39,7 +39,7 @@ open class MTAlert: NSObject {
 			alert.addAction(cancelAction)
 		}
 
-		let topview = MT.viewController.topViewController()
+		let topview = MT.view.top()
 		if let topview = topview {
 			topview.present(alert, animated: true, completion: {})
 		}

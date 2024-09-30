@@ -71,7 +71,7 @@ public class MTUtilities: NSObject {
 //		}
 //	}
 	
-	/// バンドル内のダミーjsonファイルを指定したデータモデルの方で取得
+	/// バンドル内のダミーjsonファイルを指定したデータモデルの型で取得
 	/// - Parameters:
 	///   - filename: バンドル内のjsonファイル名(.jsonは不要)
 	///   - Type: dataModelを指定
@@ -83,6 +83,17 @@ public class MTUtilities: NSObject {
 		}
 		do {
 			let codable = try JSONDecoder().decode(T.self, from: Data.init(contentsOf: filePath))
+			return codable
+		} catch let error {
+			print("Json parser error: \(error.localizedDescription)")
+			return nil
+		}
+	}
+	
+	public static func jsonObjectFromString<T: Decodable>(string: String, Type: T.Type) -> T? {
+				
+		do {
+			let codable = try JSONDecoder().decode(T.self, from: Data(string.utf8))
 			return codable
 		} catch let error {
 			print("Json parser error: \(error.localizedDescription)")

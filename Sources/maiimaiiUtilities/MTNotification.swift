@@ -17,7 +17,7 @@ open class MTNotification: NSObject {
 	///   - sound: 通知音(nil→default sound)
 	///   - userInfo: 付加情報(Dictionry形式)
 	///   - second: 通知時間(N秒後に通知)
-	public static func setLocalNotificationWithTimeInterval(title: String?, subTitle: String?, body: String?, sound: UNNotificationSound?, userInfo: [String : Any]?, second: Double, repeats: Bool) {
+	public static func setLocalNotificationWithTimeInterval(title: String?, subTitle: String?, body: String?, sound: UNNotificationSound?, userInfo: [String : Any]?, second: Double, repeats: Bool, identifier: String) {
 		
 		//通知設定
 		let content = UNMutableNotificationContent()
@@ -43,7 +43,7 @@ open class MTNotification: NSObject {
 		let intervalTrigger = UNTimeIntervalNotificationTrigger(timeInterval: second, repeats: repeats)
 		
 		//リクエスト作成
-		let calendarRequest = UNNotificationRequest(identifier: "notificationIdentifier",
+		let calendarRequest = UNNotificationRequest(identifier: identifier,
 											content: content,
 											trigger: intervalTrigger)
 		
@@ -67,7 +67,7 @@ open class MTNotification: NSObject {
 	///   - second: 秒(Int)　例:56
 	///   2024年1月24日12時34分56秒に通知
 	///   Tips dayに0を指定すると前月の最終日を返してくれる
-	public static func setLocalNotificationWithDateComponents(title: String?, subTitle: String?, body: String?, sound: UNNotificationSound?, userInfo: [String : Any]?, year: Int, month: Int, day: Int, hour: Int? ,minute: Int?, second: Int?, weekday: Int?, repeats: Bool) {
+	public static func setLocalNotificationWithDateComponents(title: String?, subTitle: String?, body: String?, sound: UNNotificationSound?, userInfo: [String : Any]?, year: Int, month: Int, day: Int, hour: Int? ,minute: Int?, second: Int?, weekday: Int?, repeats: Bool, identifier: String) {
 		
 		//通知設定
 		var dateComponents = DateComponents()
@@ -104,11 +104,23 @@ open class MTNotification: NSObject {
 		
 		
 		//リクエスト作成
-		let calendarRequest = UNNotificationRequest(identifier: "notificationIdentifier",
+		let calendarRequest = UNNotificationRequest(identifier: identifier,
 											content: content,
 											trigger: calendarTrigger)
 		
 		//通知実行
 		UNUserNotificationCenter.current().add(calendarRequest)
 	}
+	
+	/// セットされているローカル通知を全て削除
+	public static func removeAllLocalNotification() {
+		UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+	}
+	
+	/// identifierを指定してローカル通知を削除
+	/// - Parameter identifiers: ローカル通知のID: [String]
+	public static func removeLocalNotification(identifiers: [String]) {
+		UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+	}
+	
 }

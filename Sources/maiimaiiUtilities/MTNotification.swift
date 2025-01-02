@@ -67,7 +67,7 @@ open class MTNotification: NSObject {
 	///   - second: 秒(Int)　例:56
 	///   2024年1月24日12時34分56秒に通知
 	///   Tips dayに0を指定すると前月の最終日を返してくれる
-	public static func setLocalNotificationWithDateComponents(title: String?, subTitle: String?, body: String?, sound: UNNotificationSound?, userInfo: [String : Any]?, year: Int, month: Int, day: Int, hour: Int? ,minute: Int?, second: Int?, weekday: Int?, repeats: Bool, identifier: String) {
+	public static func setLocalNotificationWithDateComponents(title: String?, subTitle: String?, body: String?, sound: UNNotificationSound?, userInfo: [String : Any]?, year: Int?, month: Int?, day: Int?, hour: Int? ,minute: Int?, second: Int?, weekday: Int?, repeats: Bool, identifier: String) {
 		
 		//通知設定
 		var dateComponents = DateComponents()

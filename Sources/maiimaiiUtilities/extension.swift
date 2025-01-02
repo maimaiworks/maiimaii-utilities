@@ -177,3 +177,12 @@ extension UIButton {
 		return self
 	}
 }
+
+extension Dictionary where Key == String, Value == Any {
+	/// Key-Value形式の辞書を指定したCodable型に変換
+	public func toCodable<T: Codable>(_ type: T.Type) throws -> T {
+		let jsonData = try JSONSerialization.data(withJSONObject: self, options: [])
+		let decoder = JSONDecoder()
+		return try decoder.decode(T.self, from: jsonData)
+	}
+}

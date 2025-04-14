@@ -1,6 +1,5 @@
 //
-//  textFieldWithPadding.swift
-//  Oncology
+//  UITextFieldWithPadding.swift
 //
 //  Created by Imai Hiroshi on 10/25/22.
 //  Copyright © 2022 CompanyName. All rights reserved.
@@ -8,7 +7,7 @@
 
 import UIKit
 
-open  class textFieldWithPadding: UITextField {
+open  class UITextFieldWithPadding: UITextField {
 
 	/// テキストの内側の余白
 	@IBInspectable var topPadding: CGFloat = 0.0
